@@ -8,9 +8,6 @@
 
 @import UIKit;
 
-@class DataSource;
-
 @interface TableViewController : UITableViewController
-
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "CoreDataManager.h"
 
 @interface SettingsViewController ()
 
@@ -25,7 +26,7 @@
 }
 
 -(IBAction)clearCoreData {
-    [self.dataSource clearAllDataFromCoreData];
+    [self.coreDataManager clearAllDataFromCoreData];
 }
 
 -(void)updateStatusOfSettingsSwitch {

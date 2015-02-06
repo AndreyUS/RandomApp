@@ -27,15 +27,15 @@
 		CE3DAB391A83928200B6DFCF /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3DAB261A83928200B6DFCF /* UIProgressView+AFNetworking.m */; };
 		CE3DAB3A1A83928200B6DFCF /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3DAB281A83928200B6DFCF /* UIRefreshControl+AFNetworking.m */; };
 		CE3DAB3B1A83928200B6DFCF /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3DAB2A1A83928200B6DFCF /* UIWebView+AFNetworking.m */; };
+		CE3DB1C41A84FEDC00358922 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3DB1C31A84FEDC00358922 /* CoreDataManager.m */; };
+		CE3DB1CA1A850ABF00358922 /* RandomNumbersGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3DB1C91A850ABF00358922 /* RandomNumbersGenerator.m */; };
 		CE445A501A820F3600DC12A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE445A4F1A820F3600DC12A4 /* main.m */; };
 		CE445A531A820F3600DC12A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE445A521A820F3600DC12A4 /* AppDelegate.m */; };
 		CE445A561A820F3600DC12A4 /* RandomApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE445A541A820F3600DC12A4 /* RandomApp.xcdatamodeld */; };
-		CE445A591A820F3600DC12A4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE445A581A820F3600DC12A4 /* ViewController.m */; };
 		CE445A5C1A820F3600DC12A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE445A5A1A820F3600DC12A4 /* Main.storyboard */; };
 		CE445A5E1A820F3600DC12A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE445A5D1A820F3600DC12A4 /* Images.xcassets */; };
 		CE445A611A820F3600DC12A4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE445A5F1A820F3600DC12A4 /* LaunchScreen.xib */; };
 		CE445A6D1A820F3600DC12A4 /* RandomAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE445A6C1A820F3600DC12A4 /* RandomAppTests.m */; };
-		CE445A781A820F7000DC12A4 /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE445A771A820F7000DC12A4 /* MainNavigationViewController.m */; };
 		CE445A7C1A82118B00DC12A4 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE445A7A1A82118B00DC12A4 /* TableViewController.m */; };
 		CE445A7D1A82118B00DC12A4 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE445A7B1A82118B00DC12A4 /* TableViewController.xib */; };
 		CE445A841A8216C400DC12A4 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CE445A831A8216C400DC12A4 /* DataSource.m */; };
@@ -93,22 +93,22 @@
 		CE3DAB281A83928200B6DFCF /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		CE3DAB291A83928200B6DFCF /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		CE3DAB2A1A83928200B6DFCF /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		CE3DB1C21A84FEDC00358922 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		CE3DB1C31A84FEDC00358922 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		CE3DB1C81A850ABF00358922 /* RandomNumbersGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumbersGenerator.h; sourceTree = "<group>"; };
+		CE3DB1C91A850ABF00358922 /* RandomNumbersGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomNumbersGenerator.m; sourceTree = "<group>"; };
 		CE445A4A1A820F3600DC12A4 /* RandomApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE445A4E1A820F3600DC12A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE445A4F1A820F3600DC12A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE445A511A820F3600DC12A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE445A521A820F3600DC12A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CE445A551A820F3600DC12A4 /* RandomApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RandomApp.xcdatamodel; sourceTree = "<group>"; };
-		CE445A571A820F3600DC12A4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CE445A581A820F3600DC12A4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CE445A5B1A820F3600DC12A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE445A5D1A820F3600DC12A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE445A601A820F3600DC12A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CE445A661A820F3600DC12A4 /* RandomAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE445A6B1A820F3600DC12A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE445A6C1A820F3600DC12A4 /* RandomAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomAppTests.m; sourceTree = "<group>"; };
-		CE445A761A820F7000DC12A4 /* MainNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationViewController.h; sourceTree = "<group>"; };
-		CE445A771A820F7000DC12A4 /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		CE445A791A82118B00DC12A4 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		CE445A7A1A82118B00DC12A4 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		CE445A7B1A82118B00DC12A4 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
@@ -213,15 +213,11 @@
 				CE445A861A8224ED00DC12A4 /* Entity */,
 				CE445A511A820F3600DC12A4 /* AppDelegate.h */,
 				CE445A521A820F3600DC12A4 /* AppDelegate.m */,
-				CE445A571A820F3600DC12A4 /* ViewController.h */,
-				CE445A581A820F3600DC12A4 /* ViewController.m */,
 				CE445A5A1A820F3600DC12A4 /* Main.storyboard */,
 				CE445A5D1A820F3600DC12A4 /* Images.xcassets */,
 				CE445A5F1A820F3600DC12A4 /* LaunchScreen.xib */,
 				CE445A541A820F3600DC12A4 /* RandomApp.xcdatamodeld */,
 				CE445A4D1A820F3600DC12A4 /* Supporting Files */,
-				CE445A761A820F7000DC12A4 /* MainNavigationViewController.h */,
-				CE445A771A820F7000DC12A4 /* MainNavigationViewController.m */,
 				CE445A791A82118B00DC12A4 /* TableViewController.h */,
 				CE445A7A1A82118B00DC12A4 /* TableViewController.m */,
 				CE445A7B1A82118B00DC12A4 /* TableViewController.xib */,
@@ -232,6 +228,10 @@
 				CE3DAAFF1A83645900B6DFCF /* SettingsViewController.m */,
 				CE3DAB001A83645900B6DFCF /* SettingsViewController.xib */,
 				CE3DAB031A83678100B6DFCF /* Settings.bundle */,
+				CE3DB1C21A84FEDC00358922 /* CoreDataManager.h */,
+				CE3DB1C31A84FEDC00358922 /* CoreDataManager.m */,
+				CE3DB1C81A850ABF00358922 /* RandomNumbersGenerator.h */,
+				CE3DB1C91A850ABF00358922 /* RandomNumbersGenerator.m */,
 			);
 			path = RandomApp;
 			sourceTree = "<group>";
@@ -375,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3DAB2F1A83928200B6DFCF /* AFSecurityPolicy.m in Sources */,
+				CE3DB1CA1A850ABF00358922 /* RandomNumbersGenerator.m in Sources */,
 				CE445A531A820F3600DC12A4 /* AppDelegate.m in Sources */,
 				CE3DAB2E1A83928200B6DFCF /* AFNetworkReachabilityManager.m in Sources */,
 				CE445A7C1A82118B00DC12A4 /* TableViewController.m in Sources */,
@@ -388,6 +389,7 @@
 				CE3DAB361A83928200B6DFCF /* UIAlertView+AFNetworking.m in Sources */,
 				CE3DAB311A83928200B6DFCF /* AFURLRequestSerialization.m in Sources */,
 				CE445A841A8216C400DC12A4 /* DataSource.m in Sources */,
+				CE3DB1C41A84FEDC00358922 /* CoreDataManager.m in Sources */,
 				CE3DAB331A83928200B6DFCF /* AFURLSessionManager.m in Sources */,
 				CE3DAB011A83645900B6DFCF /* SettingsViewController.m in Sources */,
 				CE3DAB2C1A83928200B6DFCF /* AFHTTPRequestOperationManager.m in Sources */,
@@ -395,8 +397,6 @@
 				CE445A561A820F3600DC12A4 /* RandomApp.xcdatamodeld in Sources */,
 				CE3DAB371A83928200B6DFCF /* UIButton+AFNetworking.m in Sources */,
 				CE3DAB321A83928200B6DFCF /* AFURLResponseSerialization.m in Sources */,
-				CE445A591A820F3600DC12A4 /* ViewController.m in Sources */,
-				CE445A781A820F7000DC12A4 /* MainNavigationViewController.m in Sources */,
 				CE3DAB3A1A83928200B6DFCF /* UIRefreshControl+AFNetworking.m in Sources */,
 				CE445A501A820F3600DC12A4 /* main.m in Sources */,
 				CE5AB9AF1A8257A70021E17E /* RNumber.m in Sources */,
@@ -523,8 +523,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = RandomApp/PrefixHeader.pch;
 				INFOPLIST_FILE = RandomApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -534,8 +536,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = RandomApp/PrefixHeader.pch;
 				INFOPLIST_FILE = RandomApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

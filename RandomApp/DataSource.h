@@ -11,19 +11,19 @@
 #import "RNumber.h"
 
 #import "TableViewController.h"
+#import "CoreDataManager.h"
+#import "RandomNumbersGenerator.h"
 
+@class CoreDataManager;
 
-@interface DataSource : UIView <NSFetchedResultsControllerDelegate>
+@interface DataSource : NSObject <NSFetchedResultsControllerDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, weak) TableViewController *tableViewConroller;
+@property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) CoreDataManager *coreDataManager;
+@property (nonatomic, strong) RandomNumbersGenerator *randomNumbersGenerator;
 
--(NSInteger)numberOfSectionsForTableView;
--(NSInteger)numberOfRowsInSectionForTableView:(NSInteger)section;
--(RNumber *)entityForTableView: (NSIndexPath *)indexPath;
 -(void)startWork;
 -(void)setupUseRandomOrg;
--(void)clearAllDataFromCoreData;
--(void)deleteObjectFromCoreData:(NSIndexPath *)indexPath;
 
 @end

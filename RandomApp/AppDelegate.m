@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainNavigationViewController.h"
+#import "TableViewController.h"
 #import "AFNetworkActivityIndicatorManager.h"
 
 @interface AppDelegate ()
@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self managedObjectContext];
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-    MainNavigationViewController *mainNavigationViewController = [[MainNavigationViewController alloc] initWithNibName:@"MainNavigationViewController" bundle:nil];
-    self.window.rootViewController = mainNavigationViewController;
+    TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:tableViewController];
     [self.window makeKeyAndVisible];
     
     return YES;

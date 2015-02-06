@@ -8,13 +8,13 @@
 
 @import UIKit;
 
-#import "DataSource.h"
+@class CoreDataManager;
 
 @interface SettingsViewController : UIViewController
 
 @property(nonatomic, strong) IBOutlet UILabel *textLabel;
 @property(nonatomic, strong) IBOutlet UISwitch *settingsSwitch;
-@property(nonatomic, weak) DataSource *dataSource;
+@property(nonatomic, weak) CoreDataManager *coreDataManager;
 
 -(IBAction) clearCoreData;
 
