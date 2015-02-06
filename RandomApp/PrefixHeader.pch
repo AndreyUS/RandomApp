@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  RandomApp
+//
+//  Created by Andrew on 04.02.15.
+//  Copyright (c) 2015 Andrew. All rights reserved.
+//
+
+#ifndef RandomApp_PrefixHeader_pch
+#define RandomApp_PrefixHeader_pch
+#import <CoreData/CoreData.h>
+#import "AFNetworking.h"
+
+#endif
