@@ -10,8 +10,7 @@
 
 #import "RNumber.h"
 
-#import "DataSource.h"
-#import "AppDelegate.h"
+#import "RandomNumbersGenerator.h"
 
 @implementation CoreDataManager
 
@@ -24,7 +23,7 @@
     return coreDataManager;
 }
 
--(void)insertNumber:(NSInteger)number andMethod:(NSString *)method andRandomNubmbersGenerator:(RandomNumbersGenerator *) __weak randomNumbersGenerator{
+-(void)insertNumber:(NSInteger)number andMethod:(NSString *)method andRandomNubmbersGenerator:(RandomNumbersGenerator *) __weak randomNumbersGenerator {
     dispatch_async(dispatch_get_main_queue(), ^{
         RNumber *rNumber = [NSEntityDescription insertNewObjectForEntityForName:@"RNumber" inManagedObjectContext:self.managedObjectContext];
         [rNumber setValue:@(number) forKey:@"value"];
