@@ -10,11 +10,9 @@
 
 #import "RNumber.h"
 
-#import "AppDelegate.h"
+#import "CoreDataManager.h"
 
 @interface DataSource ()
-
-@property (nonatomic, assign) BOOL useRandomOrg;
 
 @end
 
@@ -22,11 +20,8 @@
 
 - (instancetype)init {
     self = [super init];
-    
     if (self) {
         [self setupFetchedResultsController];
-        [self setupUseRandomOrg];
-        [self setupCoreDataManeger];
         [self setupRandomNumbersGenerator];
     }
     
@@ -35,29 +30,17 @@
 
 -(void)setupFetchedResultsController {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"RNumber" inManagedObjectContext: self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"RNumber" inManagedObjectContext: [[CoreDataManager instance] managedObjectContext]];
     [fetchRequest setEntity:entity];
     NSSortDescriptor *sortDescription = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescription, nil]];
     self.fetchedResultsController = [[NSFetchedResultsController alloc]
                                      initWithFetchRequest:fetchRequest
-                                     managedObjectContext:self.managedObjectContext
+                                     managedObjectContext:[[CoreDataManager instance] managedObjectContext]
                                      sectionNameKeyPath:nil
                                      cacheName:nil];
     self.fetchedResultsController.delegate = self;
     [self.fetchedResultsController performFetch:nil];
-}
-
--(NSManagedObjectContext *)managedObjectContext {
-    return APP_DELEGATE.managedObjectContext;
-}
-
--(void)setupUseRandomOrg {
-    self.useRandomOrg = [[NSUserDefaults standardUserDefaults] boolForKey:@"SettingsUseRandomOrg"];
-}
--(void)setupCoreDataManeger {
-    self.coreDataManager = [[CoreDataManager alloc] init];
-    self.coreDataManager.dataSource = self;
 }
 
 -(void)setupRandomNumbersGenerator {
@@ -65,16 +48,7 @@
 }
 
 -(void)startWork {
-    CoreDataManager * __weak weakCoreDataManager = self.coreDataManager;
-    RandomNumbersGenerator * __weak weakRandomNumberGenerator = self.randomNumbersGenerator;
-    if(self.useRandomOrg) {
-        [weakRandomNumberGenerator randomOrgMethodOfGettingNumber:^(NSInteger rNumber) {
-            [weakCoreDataManager insertNumber:rNumber andMethod:@"random.org"];
-        }];
-    } else {
-        [weakCoreDataManager insertNumber:[weakRandomNumberGenerator localMethodOfGettingNumber] andMethod:@"local"];
-    }
-    
+    [self.randomNumbersGenerator generateNumber];
 }
 
 -(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
@@ -116,6 +90,7 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     RNumber *number = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self.coreDataManager deleteObjectFromCoreData:number];
+    [[CoreDataManager instance] deleteObjectFromCoreData:number];
 }
+
 @end

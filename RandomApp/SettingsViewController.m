@@ -26,7 +26,7 @@
 }
 
 -(IBAction)clearCoreData {
-    [self.coreDataManager clearAllDataFromCoreData];
+    [[CoreDataManager instance] clearAllDataFromCoreData];
 }
 
 -(void)updateStatusOfSettingsSwitch {

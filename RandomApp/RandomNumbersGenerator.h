@@ -10,7 +10,7 @@
 
 @interface RandomNumbersGenerator : NSObject
 
--(NSInteger)localMethodOfGettingNumber;
--(void)randomOrgMethodOfGettingNumber:(void(^)(NSInteger rNumber))block;
+-(void)generateNumber;
+-(void)setupUseRandomOrg;
 
 @end

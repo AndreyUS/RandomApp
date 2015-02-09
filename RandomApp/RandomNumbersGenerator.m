@@ -7,8 +7,37 @@
 //
 
 #import "RandomNumbersGenerator.h"
+#import "CoreDataManager.h"
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+
+@interface RandomNumbersGenerator()
+
+@property (nonatomic, assign) BOOL useRandomOrg;
+@property (nonatomic, strong) CoreDataManager *coreDataManager;
+
+@end
 
 @implementation RandomNumbersGenerator
+
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        [self setupCoreDataManager];
+        [self setupUseRandomOrg];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupUseRandomOrg) name:UIApplicationWillEnterForegroundNotification object:nil];
+        [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    }
+    return self;
+}
+
+-(void)setupUseRandomOrg {
+    self.useRandomOrg = [[NSUserDefaults standardUserDefaults] boolForKey:@"SettingsUseRandomOrg"];
+}
+
+-(void) setupCoreDataManager {
+    self.coreDataManager = [CoreDataManager instance];
+}
 
 -(NSInteger)localMethodOfGettingNumber {
     return (NSInteger)5 + arc4random() % (10-5+1);
@@ -27,6 +56,20 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+-(void)generateNumber {
+    CoreDataManager * __weak weakCoreDataManager = self.coreDataManager;
+    __block NSInteger number;
+    if(self.useRandomOrg) {
+       [self randomOrgMethodOfGettingNumber:^(NSInteger rNumber) {
+           number = rNumber;
+            [weakCoreDataManager insertNumber:rNumber andMethod:@"random.org" andRandomNubmbersGenerator:self];
+        }];
+    } else {
+        number = [self localMethodOfGettingNumber];
+        [weakCoreDataManager insertNumber:number andMethod:@"local" andRandomNubmbersGenerator:self];
+    }
 }
 
 @end
