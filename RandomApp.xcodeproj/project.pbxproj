@@ -65,6 +65,7 @@
 		CE445A821A8216C400DC12A4 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		CE445A831A8216C400DC12A4 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 		CE445A851A8217A800DC12A4 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CE5646A31A8A15070010B395 /* HeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderDefine.h; sourceTree = "<group>"; };
 		CE5AB9AD1A8257A70021E17E /* RNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNumber.h; sourceTree = "<group>"; };
 		CE5AB9AE1A8257A70021E17E /* RNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNumber.m; sourceTree = "<group>"; };
 		F07FEA39DA9FFA28A90C9BBD /* Pods-RandomApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomApp/Pods-RandomApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 				CE3DB1C31A84FEDC00358922 /* CoreDataManager.m */,
 				CE3DB1C81A850ABF00358922 /* RandomNumbersGenerator.h */,
 				CE3DB1C91A850ABF00358922 /* RandomNumbersGenerator.m */,
+				CE5646A31A8A15070010B395 /* HeaderDefine.h */,
 			);
 			path = RandomApp;
 			sourceTree = "<group>";

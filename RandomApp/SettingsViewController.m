@@ -11,6 +11,11 @@
 
 @interface SettingsViewController ()
 
+@property(nonatomic, strong) IBOutlet UILabel *textLabel;
+@property(nonatomic, strong) IBOutlet UISwitch *settingsSwitch;
+
+-(IBAction) clearCoreData;
+
 @end
 
 @implementation SettingsViewController
@@ -30,14 +35,14 @@
 }
 
 -(void)updateStatusOfSettingsSwitch {
-    BOOL statusOfSettingsSwitch = [[NSUserDefaults standardUserDefaults] boolForKey:@"SettingsUseRandomOrg"];
+    BOOL statusOfSettingsSwitch = [[NSUserDefaults standardUserDefaults] boolForKey:settingsUseRandomOrg];
     [self.settingsSwitch setOn:statusOfSettingsSwitch];
 }
 
 -(void)changedStatusOfSettingsSwitch:(id)sender {
     BOOL statusOfSettingsSwitch = [sender isOn];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:statusOfSettingsSwitch forKey:@"SettingsUseRandomOrg"];
+    [defaults setBool:statusOfSettingsSwitch forKey:settingsUseRandomOrg];
     [defaults synchronize];
 }
 

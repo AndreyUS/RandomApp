@@ -15,9 +15,9 @@
 
 @interface DataSource : NSObject <NSFetchedResultsControllerDelegate, UITableViewDataSource>
 
-@property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
+
 @property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic, strong) RandomNumbersGenerator *randomNumbersGenerator;
+
 
 -(void)startWork;
 

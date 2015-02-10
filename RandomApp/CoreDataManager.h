@@ -19,7 +19,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 -(void)saveContext;
--(void)insertNumber:(NSInteger)number andMethod:(NSString *)method andRandomNubmbersGenerator:(RandomNumbersGenerator *) __weak randomNumbersGenerator;
+-(void)insertNumber:(NSInteger)number andMethod:(NSString *)method;
 -(void)deleteObjectFromCoreData:(RNumber *)number;
 -(void)clearAllDataFromCoreData;
 +(instancetype) instance;

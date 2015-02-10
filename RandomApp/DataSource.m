@@ -14,6 +14,9 @@
 
 @interface DataSource ()
 
+@property (nonatomic, strong) RandomNumbersGenerator *randomNumbersGenerator;
+@property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
+
 @end
 
 @implementation DataSource

@@ -9,6 +9,6 @@
 #ifndef RandomApp_PrefixHeader_pch
 #define RandomApp_PrefixHeader_pch
 #import <CoreData/CoreData.h>
-
+#import "HeaderDefine.h"
 
 #endif

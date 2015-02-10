@@ -25,18 +25,16 @@
     self = [super init];
     if (self) {
         [self setupCoreDataManager];
-        [self setupUseRandomOrg];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupUseRandomOrg) name:UIApplicationWillEnterForegroundNotification object:nil];
         [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     }
     return self;
 }
 
--(void)setupUseRandomOrg {
-    self.useRandomOrg = [[NSUserDefaults standardUserDefaults] boolForKey:@"SettingsUseRandomOrg"];
+-(BOOL)useRandomOrg {
+    return[[NSUserDefaults standardUserDefaults] boolForKey:settingsUseRandomOrg];
 }
 
--(void) setupCoreDataManager {
+-(void)setupCoreDataManager {
     self.coreDataManager = [CoreDataManager instance];
 }
 
@@ -61,16 +59,25 @@
 
 -(void)generateNumber {
     CoreDataManager * __weak weakCoreDataManager = self.coreDataManager;
-    __block NSInteger number;
-    if(self.useRandomOrg) {
-       [self randomOrgMethodOfGettingNumber:^(NSInteger rNumber) {
-           number = rNumber;
-            [weakCoreDataManager insertNumber:rNumber andMethod:@"random.org" andRandomNubmbersGenerator:self];
+    __block NSInteger seconds;
+    if([self useRandomOrg]) {
+        [self randomOrgMethodOfGettingNumber:^(NSInteger rNumber) {
+            seconds = rNumber;
+            [weakCoreDataManager insertNumber:rNumber andMethod:@"random.org"];
+            [self generateNumberAfter:seconds];
         }];
     } else {
-        number = [self localMethodOfGettingNumber];
-        [weakCoreDataManager insertNumber:number andMethod:@"local" andRandomNubmbersGenerator:self];
+        seconds = [self localMethodOfGettingNumber];
+        [weakCoreDataManager insertNumber:seconds andMethod:@"local"];
+        [self generateNumberAfter:seconds];
     }
+}
+
+-(void)generateNumberAfter:(NSInteger)seconds {
+    RandomNumbersGenerator __weak *weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(seconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf generateNumber];
+    });
 }
 
 @end

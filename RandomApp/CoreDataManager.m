@@ -14,6 +14,10 @@
 
 @implementation CoreDataManager
 
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
 +(instancetype) instance {
     static dispatch_once_t onceToken;
     static CoreDataManager *coreDataManager;
@@ -23,7 +27,7 @@
     return coreDataManager;
 }
 
--(void)insertNumber:(NSInteger)number andMethod:(NSString *)method andRandomNubmbersGenerator:(RandomNumbersGenerator *) __weak randomNumbersGenerator {
+-(void)insertNumber:(NSInteger)number andMethod:(NSString *)method {
     dispatch_async(dispatch_get_main_queue(), ^{
         RNumber *rNumber = [NSEntityDescription insertNewObjectForEntityForName:@"RNumber" inManagedObjectContext:self.managedObjectContext];
         [rNumber setValue:@(number) forKey:@"value"];
@@ -35,9 +39,6 @@
         if (![self.managedObjectContext save:&error]) {
             NSLog(@"Error, %@", error);
         }
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(number * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [randomNumbersGenerator generateNumber];
     });
 }
 
@@ -69,10 +70,6 @@
 }
 
 #pragma mark - Core Data stack
-
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "test.RandomApp" in the application's documents directory.

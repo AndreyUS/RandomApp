@@ -11,6 +11,5 @@
 @interface RandomNumbersGenerator : NSObject
 
 -(void)generateNumber;
--(void)setupUseRandomOrg;
 
 @end

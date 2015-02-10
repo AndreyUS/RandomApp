@@ -12,9 +12,4 @@
 
 @interface SettingsViewController : UIViewController
 
-@property(nonatomic, strong) IBOutlet UILabel *textLabel;
-@property(nonatomic, strong) IBOutlet UISwitch *settingsSwitch;
-
--(IBAction) clearCoreData;
-
 @end
